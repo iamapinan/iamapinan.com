@@ -1,72 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iamapinan - Personal Web Blog</title>
-    <link href="/css/styles.css" rel="stylesheet">
-    <!-- Google Tags -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-K8H9J2NQ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GT-K8H9J2NQ');
-    </script>
-    <!-- OEmbed and OpenGraph tags -->
-    <meta property="og:title" content="iamapinan - Personal Web Blog">
-    <meta property="og:description" content="Welcome to iamapinan's personal web blog">
-    <meta property="og:image" content="https://iamapinan.com/images/logo.png">
-    <meta property="og:url" content="https://iamapinan.com">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iamapinan</title>
+  <!-- Google Tag Manager -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GT-K8H9J2NQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GT-K8H9J2NQ');
+  </script>
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="iamapinan" />
+  <meta name="author" content="Apinan Woratrakun" />
+  <meta property="og:locale" content="th_TH" />
+  <meta name="description" content="Apinan personal blog!. I created this website to share anything about tech, development, or tech-related." />
+  <meta property="og:description" content="Apinan personal blog!. I created this website to share anything about tech, development, or tech-related." />
+  <link rel="canonical" href="https://iamapinan.com/" />
+  <meta property="og:url" content="https://iamapinan.com/" />
+  <meta property="og:site_name" content="iamapinan" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="twitter:title" content="iamapinan" />
+  <meta name="twitter:site" content="@iamapinan" />
+  <meta name="twitter:creator" content="@Apinan Woratrakun" />
+  <meta property="og:image" content="/images/iamapinan.png">
+  <!-- oEmbed Meta Tags -->
+  <meta name="twitter:card" content="/images/iamapinan.png">
 </head>
-<body class="bg-gray-100">
-    <header class="bg-primary text-white p-4">
-        <nav class="container mx-auto flex justify-between items-center">
-            <a href="/" class="text-2xl font-bold">iamapinan</a>
-            <ul class="flex space-x-4">
-                <li><a href="/" class="hover:text-secondary">Home</a></li>
-                <li><a href="/articles.html" class="hover:text-secondary">Articles</a></li>
-                <li><a href="/about.html" class="hover:text-secondary">About</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="container mx-auto mt-8 p-4">
-        <section id="welcome" class="mb-8">
-            <!-- Welcome message will be inserted here by JavaScript -->
-        </section>
-
-        <section id="search" class="mb-8">
-            <input type="text" id="searchInput" placeholder="Search articles..." class="w-full p-2 border rounded">
-        </section>
-
-        <section id="latestArticles" class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Latest Articles</h2>
-            <!-- Latest articles will be inserted here by JavaScript -->
-        </section>
-
-        <section id="popularArticles" class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Popular Articles</h2>
-            <!-- Popular articles will be inserted here by JavaScript -->
-        </section>
-    </main>
-
-    <footer class="bg-gray-800 text-white p-4 mt-8">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 iamapinan. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Cookie Consent -->
-    <div id="cookieConsent" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 hidden">
-        <p>This website uses cookies to ensure you get the best experience on our website.</p>
-        <button id="acceptCookies" class="bg-secondary text-white px-4 py-2 rounded mt-2">Accept</button>
-    </div>
-
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    <script src="/js/firebase-config.js"></script>
-    <script src="/js/main.js"></script>
+<body>
+  <div id="root"></div>
 </body>
 </html>
