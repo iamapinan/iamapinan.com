@@ -1,0 +1,21 @@
+{
+    "articles": {
+      "article1": {
+        "title": "Welcome to iamapinan.com",
+        "summary": "This is my welcome post to my blog.",
+        "content": "content/articles/welcome.md",
+        "date": "2024-07-13",
+        "categories": ["technology", "web development"],
+        "tags": ["javascript", "firebase"],
+        "views": 100
+      }
+    },
+    "categories": {
+      "technology": {
+        "count": 10
+      },
+      "web development": {
+        "count": 5
+      }
+    }
+  }

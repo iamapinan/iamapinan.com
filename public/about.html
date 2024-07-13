@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - iamapinan's Personal Web Blog</title>
+    <link href="/css/styles.css" rel="stylesheet">
+    <!-- Google Tags -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-TAG-ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR-TAG-ID');
+    </script>
+    <!-- OEmbed and OpenGraph tags -->
+    <meta property="og:title" content="About iamapinan - Personal Web Blog">
+    <meta property="og:description" content="Learn more about iamapinan, the author of this personal web blog">
+    <meta property="og:image" content="https://yourdomain.com/images/about-og-image.jpg">
+    <meta property="og:url" content="https://yourdomain.com/about.html">
+    <link rel="alternate" type="application/json+oembed" href="https://yourdomain.com/oembed.json">
+</head>
+<body class="bg-gray-100">
+    <header class="bg-primary text-white p-4">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold">iamapinan</a>
+            <ul class="flex space-x-4">
+                <li><a href="/" class="hover:text-secondary">Home</a></li>
+                <li><a href="/articles.html" class="hover:text-secondary">Articles</a></li>
+                <li><a href="/about.html" class="hover:text-secondary">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto mt-8 p-4">
+        <h1 class="text-3xl font-bold mb-8">About iamapinan</h1>
+
+        <section id="biography" class="mb-8">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/3 mb-4 md:mb-0">
+                    <img id="profileImage" src="/images/profile-placeholder.jpg" alt="iamapinan" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-2/3 md:pl-8">
+                    <h2 class="text-2xl font-bold mb-4">Biography</h2>
+                    <div id="bioContent">
+                        <!-- Biography content will be inserted here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Skills</h2>
+            <ul id="skillsList" class="list-disc pl-5">
+                <!-- Skills will be inserted here by JavaScript -->
+            </ul>
+        </section>
+
+        <section id="experience" class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Experience</h2>
+            <div id="experienceList">
+                <!-- Experience items will be inserted here by JavaScript -->
+            </div>
+        </section>
+
+        <section id="contact" class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Contact</h2>
+            <p>You can reach me at: <a href="mailto:contact@iamapinan.com" class="text-primary hover:underline">contact@iamapinan.com</a></p>
+            <div class="mt-4 flex space-x-4">
+                <a href="https://linkedin.com/in/iamapinan" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">LinkedIn</a>
+                <a href="https://github.com/iamapinan" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">GitHub</a>
+                <!-- Add more social media links as needed -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 iamapinan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent -->
+    <div id="cookieConsent" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 hidden">
+        <p>This website uses cookies to ensure you get the best experience on our website.</p>
+        <button id="acceptCookies" class="bg-secondary text-white px-4 py-2 rounded mt-2">Accept</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="/js/firebase-config.js"></script>
+    <script src="/js/about.js"></script>
+</body>
+</html>
