@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# iamapinan.com 🖐️
+Personal web blog of Apinan Woratrakun
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Apinan Woratrakun](public/images/iamapinan.jpg)
 
-## Available Scripts
+## About me
+I am a software engineer with a passion for creating innovative solutions. I have a strong background in web development and enjoy working with cutting-edge technologies. With experience in both front-end and back-end development, I strive to build user-friendly and scalable applications. I am constantly learning and exploring new technologies to stay up-to-date with the latest industry trends. In my free time, I enjoy contributing to open-source projects and sharing my knowledge through technical blog posts. Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/iamapinan/) to learn more about my professional experience and projects.
 
-In the project directory, you can run:
+## My Expertise
+I specialize in the following areas:
 
-### `npm start`
+- Web development using HTML, CSS, and JavaScript
+- Front-end frameworks like React and Angular
+- Back-end development with Node.js and Express
+- Database management with MongoDB and MySQL
+- RESTful API design and implementation
+- Version control using Git and GitHub
+- Deployment and hosting on platforms like Heroku and AWS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+If you have any questions or need assistance with any of these topics, feel free to reach out to me.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## My Passion
+One of my biggest passions is exploring the intersection of technology and art. I love using programming as a creative outlet and finding unique ways to blend aesthetics with functionality. Whether it's designing visually stunning websites or creating interactive experiences, I am always excited to push the boundaries of what is possible. If you share this passion or have any ideas for collaboration, I would love to connect and explore new creative projects together.
 
-### `npm test`
+## Connect with me
+You can find me on various social media platforms. Feel free to connect with me and stay updated on my latest projects and thoughts.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Twitter](https://twitter.com/iamapinan)
+- [GitHub](https://github.com/iamapinan)
+- [LinkedIn](https://www.linkedin.com/in/iamapinan/)
+- [Facebook](https://www.facebook.com/9apinan)
+- [YouTube](https://www.youtube.com/@iamapinan)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Let's connect and engage in meaningful discussions!

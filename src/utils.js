@@ -8,7 +8,7 @@ export const getGreeting = () => {
   
   export const getWeather = async () => {
     try {
-      const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}');
+      const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Bangkok&appid=8c235df46fe119ff739dfe5e9e3ae468&units=metric');
       const data = await response.json();
       const { main, weather } = data;
       const { temp } = main;
