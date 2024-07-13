@@ -1,0 +1,53 @@
+{
+    "articles": {
+      "article1": {
+        "id": "article1",
+        "title": "First Article",
+        "date": "2023-07-14T12:00:00Z",
+        "content": "This is the content of the first article written in Markdown.",
+        "coverImage": "url_to_cover_image",
+        "categories": ["category1", "category2"],
+        "tags": ["tag1", "tag2"],
+        "popularity": 10
+      },
+      "article2": {
+        "id": "article2",
+        "title": "Second Article",
+        "date": "2023-07-15T12:00:00Z",
+        "content": "This is the content of the second article written in Markdown.",
+        "coverImage": "url_to_cover_image",
+        "categories": ["category2"],
+        "tags": ["tag2", "tag3"],
+        "popularity": 15
+      }
+    },
+    "categories": {
+      "category1": {
+        "name": "Technology"
+      },
+      "category2": {
+        "name": "Programming"
+      },
+      "category3": {
+        "name": "Lifestyle"
+      }
+    },
+    "tags": {
+      "tag1": {
+        "name": "React"
+      },
+      "tag2": {
+        "name": "Firebase"
+      },
+      "tag3": {
+        "name": "TailwindCSS"
+      }
+    },
+    "users": {
+      "user1": {
+        "id": "user1",
+        "email": "admin@example.com",
+        "passwordHash": "$2b$10$5Z9T.qdB7RFS2XzpWpB7xuT9QnBQDLNz.VyHnIzm4c7kzCkF7K.uC"
+      }
+    }
+  }
