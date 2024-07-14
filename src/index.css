@@ -1,3 +1,60 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.article-content {
+  
+}
+.article-content p {
+  font-size: 1.125rem;
+}
+.article-content a {
+    color: #007bff;
+    text-decoration: none;
+}
+.article-content p img {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+}
+.article-content h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.article-content h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.article-content h3 {
+    font-size: 1.75rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.article-content h4 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.article-content h5 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.article-content h6 {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}

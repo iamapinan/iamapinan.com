@@ -1,11 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const CookieConsent = () => {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const hasConsent = checkConsent();
+    setVisible(!hasConsent);
+  }, []);
+
+  const checkConsent = () => {
+    // Check if the user has given consent by checking for a cookie or localStorage value
+    // Return true if consent exists, false otherwise
+    // Example: return document.cookie.includes('cookieConsent=true');
+    return localStorage.getItem('cookieConsent') === 'true';
+  };
 
   const acceptCookies = () => {
+    // Set the cookie or localStorage value to remember the user's consent
+    // Example: document.cookie = 'cookieConsent=true; expires=Fri, 31 Dec 9999 23:59:59 GMT';
+    // Example: localStorage.setItem('cookieConsent', 'true');
+    localStorage.setItem('cookieConsent', 'true');
     setVisible(false);
-    // Set a cookie or localStorage to remember the consent
   };
 
   if (!visible) return null;
