@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { getWeather, getGreeting } from "../utils";
 import ArticleList from "../components/ArticleList";
 import profileImage from "../assets/iamapinan.jpg";
+import { Helmet } from "react-helmet";
+
 const HomePage = () => {
   const [greeting, setGreeting] = useState("");
   const [weather, setWeather] = useState({});
@@ -24,6 +26,11 @@ const HomePage = () => {
 
   return (
     <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased">
+      <Helmet>
+        <title>iamapinan</title>
+        <meta name="description" content="เรียนรู้ไปด้วยกัน" />
+        <meta property="og:image" content={profileImage} />
+      </Helmet>
       <div class="px-4 mx-auto max-w-2xl ">
         <img
           src={profileImage}
@@ -35,7 +42,7 @@ const HomePage = () => {
             {greeting} 👋🏻 <br/>ยินดีต้อนรับสู่ <span className="text-blue-600 italic">iamapinan!</span>
           </h1>
           <p className="mt-6">
-            Current weather: {weather.temp}°C
+            ขอให้วันนี้เป็นวันที่ดีที่สุดสำหรับคุณ! หากคุณมาที่นี่เพื่อหาคำตอบหรือแนวทางในการเขียนโปรแกรม หรือพัฒนาตนเอง คุณมาถูกที่แล้ว! สนุกกับการเรียนรู้นะครับ!
           </p>
         </section>
         <section className="search">

@@ -42,19 +42,64 @@ const ArticlePage = () => {
     );
   };
 
+  const getImageUrlFromContent = (content) => {
+    // Regular expression to match Markdown image syntax
+    const regex = /!\[.*?\]\((.*?)\)/;
+    const match = content.match(regex);
+    
+    // If a match is found, return the URL (first capturing group)
+    if (match) {
+      return match[1];
+    }
+    
+    // If no match is found, return an empty string or null
+    return null;
+  }
+
+  function cleanMarkdownTags(content) {
+    // Remove headers
+    content = content.replace(/(#+\s*)/g, '');
+    // Remove images
+    content = content.replace(/!\[.*?\]\(.*?\)/g, '');
+    // Remove links
+    content = content.replace(/\[.*?\]\(.*?\)/g, '');
+    // Remove bold and italics
+    content = content.replace(/(\*\*|__)(.*?)\1/g, '$2');
+    content = content.replace(/(\*|_)(.*?)\1/g, '$2');
+    // Remove blockquotes
+    content = content.replace(/>\s?/g, '');
+    // Remove inline code and code blocks
+    content = content.replace(/(```\s*.*?\s*```)|(`.*?`)/gs, '');
+    // Remove unordered list items
+    content = content.replace(/^\s*[-*+]\s*/gm, '');
+    // Remove ordered list items
+    content = content.replace(/^\s*\d+\.\s*/gm, '');
+    // Optional: Remove additional Markdown elements as needed
+  
+    return content;
+  }
+
   return (
     <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased">
       <Helmet>
         <title>{article.title}</title>
-        <meta name="description" content={article.description} />
-        <meta name="keywords" content={article.keywords} />
+        <meta name="description" content={ cleanMarkdownTags(article.content.substring(0, 100)) } />
+        <meta name="keywords" content={article.tags} />
         <meta property="og:title" content={article.title} />
-        <meta property="og:description" content={article.description} />
+        <meta property="og:description" content={ cleanMarkdownTags(article.content.substring(0, 100)) } />
         <meta property="og:url" content={window.location.href} />
-        <meta property="og:image" content={article.image} />
+        <meta property="og:image" content={getImageUrlFromContent(article.content)} />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={article.date} />
-        <meta property="article:author" content={article.author} />
+        <meta property="article:author" content="Apinan Woratrakun (iamapinan)" />
+
+        <meta name="twitter:card" content={getImageUrlFromContent(article.content)}/>
+        <meta property="twitter:domain" content="iamapinan.com"/>
+        <meta property="twitter:url" content={window.location.href}/>
+        <meta name="twitter:title" content={article.title}/>
+        <meta name="twitter:description" content={ cleanMarkdownTags(article.content.substring(0, 100)) }/>
+        <meta name="twitter:image" content={getImageUrlFromContent(article.content)}/>
+        
       </Helmet>
       <div className="px-4 mx-auto max-w-2xl ">
         <h1 className="text-4xl font-bold">{article.title}</h1>

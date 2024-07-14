@@ -9,10 +9,12 @@ import {
 import { getDatabase, ref, set, get, remove } from "firebase/database";
 import {
   getStorage,
-  ref as storageReference,
+  ref as sRef,
   uploadBytes,
   getDownloadURL,
   listAll,
+  deleteObject,
+  list
 } from "firebase/storage";
 import { marked } from "marked";
 import MarkdownEditor from "@uiw/react-markdown-editor";
@@ -83,10 +85,9 @@ const AdminPage = () => {
 
   const fetchMediaFiles = () => {
     const storage = getStorage();
-    const listRef = storageReference(storage, "media/");
-
+    const listRef = sRef(storage, "media/");
     listAll(listRef)
-      .then((res) => {
+    .then((res) => {
         const promises = res.items.map((itemRef) => getDownloadURL(itemRef));
         return Promise.all(promises);
       })
@@ -139,6 +140,7 @@ const AdminPage = () => {
     }).then(() => {
       setNewArticle({ title: "", categories: "", tags: "", content: "" });
       fetchContent();
+      setShowComposeArticle(false);
     });
   };
 
@@ -171,14 +173,10 @@ const AdminPage = () => {
     });
   };
 
-  const handleCategoryChange = (e) => {
-    setSelectedCategory(e.target.value);
-  };
-
   const uploadFile = () => {
     if (!file) return;
     const storage = getStorage();
-    const fileRef = storageReference(storage, `media/${file.name}`);
+    const fileRef = sRef(storage, `media/${file.name}`);
     uploadBytes(fileRef, file).then((snapshot) => {
       console.log("Uploaded a blob or file!", snapshot);
       fetchMediaFiles(); // Refresh the list of media files
@@ -188,6 +186,23 @@ const AdminPage = () => {
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
+
+  const deleteMediaFile = async (index) => {
+    // confirm delete
+    const confirmDelete = window.confirm("Are you sure you want to delete this media file?");
+    if (!confirmDelete) return;
+      const storage = getStorage();
+      // Create a reference to the file to delete
+      const desertRef = sRef(storage, index);
+      // Delete the file
+      deleteObject(desertRef).then(() => {
+        // File deleted successfully
+      }).catch((error) => {
+        // Uh-oh, an error occurred!
+        console.error("Error deleting media file:", error);
+      });
+    
+  }
 
   return (
     <div className="container mx-auto p-4 dark:bg-gray-900 dark:text-white">
@@ -218,17 +233,17 @@ const AdminPage = () => {
       ) : (
         <div>
           <div className="my-10">
-            <section class="overflow-hidden">
-              <nav class="flex items-center justify-between py-3.5 px-7 bg-neutral-50">
-                <div class="hidden xl:block w-full md:w-auto px-2 mr-auto">
-                  <ul class="flex items-center">
+            <section className="overflow-hidden">
+              <nav className="flex items-center justify-between py-3.5 px-7 bg-neutral-50">
+                <div className="hidden xl:block w-full md:w-auto px-2 mr-auto">
+                  <ul className="flex items-center">
                     <li
                       className={`mr-4 cursor-pointer ${
                         activeTab === "posts" ? "text-blue-500" : ""
                       }`}
                       onClick={() => handleTabChange("posts")}
                     >
-                      <a class="text-sm font-medium" href="#">
+                      <a className="text-sm font-medium" href="#">
                         Post
                       </a>
                     </li>
@@ -239,7 +254,7 @@ const AdminPage = () => {
                       onClick={() => handleTabChange("media")}
                     >
                       <a
-                        class="text-sm font-medium hover:text-neutral-600"
+                        className="text-sm font-medium hover:text-neutral-600"
                         href="#"
                       >
                         Media
@@ -252,7 +267,7 @@ const AdminPage = () => {
                       onClick={() => handleTabChange("category")}
                     >
                       <a
-                        class="text-sm font-medium hover:text-neutral-600"
+                        className="text-sm font-medium hover:text-neutral-600"
                         href="#"
                       >
                         Category
@@ -268,13 +283,13 @@ const AdminPage = () => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="currentColor"
-              class="size-4"
+              className="size-4"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="m8.25 4.5 7.5 7.5-7.5 7.5"
               />
             </svg>
@@ -383,6 +398,7 @@ const AdminPage = () => {
               <table className="mt-4 w-full table-auto border mx-auto">
                 <thead>
                   <tr>
+                    <th className="border bg-gray-100">Preview</th>
                     <th className="border bg-gray-100">Media URL</th>
                     <th className="border bg-gray-100">Action</th>
                   </tr>
@@ -391,15 +407,25 @@ const AdminPage = () => {
                   {mediaFiles.map((url, index) => (
                     <tr key={index}>
                       <td className="border p-2">
+                        <img src={url} alt="media" className="w-20" />
+                      </td>
+                      <td className="border p-2">
                         <a href={url}>{url}</a>
                       </td>
                       <td className="border w-1/6 text-center">
                         <button
                           onClick={() => navigator.clipboard.writeText(url)}
-                          className="bg-blue-500 text-white px-2 py-1 rounded"
+                          className="bg-blue-500 text-white px-2 py-1 text-sm"
                         >
                           Copy URL
                         </button>
+                        <button
+                          onClick={() => deleteMediaFile(index)}
+                          className="bg-red-500 text-white px-2 py-1 text-sm"
+                        >
+                          Delete
+                        </button>
+
                       </td>
                     </tr>
                   ))}
@@ -428,8 +454,10 @@ const AdminPage = () => {
                   />
                   <select
                     name="categories"
-                    value={selectedCategory}
-                    onChange={handleCategoryChange}
+                    value={newArticle.categories}
+                    onChange={(e) => {
+                      setNewArticle({ ...newArticle, categories: e.target.value });
+                    }}
                     className="border p-2 mt-2 w-full"
                   >
                     <option value="">Select Category</option>
