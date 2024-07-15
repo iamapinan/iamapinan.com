@@ -79,6 +79,12 @@ const ArticlePage = () => {
     return content;
   }
 
+  const handleTextToSpeech = () => {
+    const utterance = new SpeechSynthesisUtterance(cleanMarkdownTags(article.content));
+    utterance.lang = 'th-TH';
+    speechSynthesis.speak(utterance);
+  };
+
   return (
     <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased">
       <Helmet>
@@ -112,6 +118,14 @@ const ArticlePage = () => {
             minute: "numeric",
           })}
         </p>
+        <div className="mt-4 justify-end w-full">
+          <button
+            className="bg-gray-800 text-white px-2 py-2 text-sm rounded ml-2 flex flex-row gap-2 items-center"
+            onClick={handleTextToSpeech}
+          >
+            อ่านให้ฟัง
+          </button>
+        </div>
         <div className="mt-4">
           <div
             dangerouslySetInnerHTML={{ __html: marked(article.content) }}
